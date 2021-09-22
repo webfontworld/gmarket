@@ -1,5 +1,5 @@
 # GmarketSans
-
+<pre>
 @font-face {
     font-family: 'GmarketSans';
     font-weight: 300; 
@@ -24,3 +24,4 @@
          url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFLight.woff) format('woff');
     font-display: swap;
 }
+</pre>
