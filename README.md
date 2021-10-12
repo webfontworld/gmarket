@@ -1,4 +1,9 @@
 # GmarketSans
+
+## 지마켓 산스체<br>
+<img src="https://webfontworld.github.io/GmarketSans/GmarketSans.png" alt="지마켓 산스체" style="width:300px"><br>
+https://webfontworld.github.io/GmarketSans/GmarketSans.css<br>
+https://wess.tistory.com/232
 <pre>
 @font-face {
     font-family: 'GmarketSans';
@@ -26,4 +31,3 @@
 }
 </pre>
 
-https://webstoryboy.tistory.com/1596
