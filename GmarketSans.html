@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        body {width: 1200px; margin: 100px auto; font-family: 'NEXON Lv1 Gothic OTF';}
+        pre, code {font-family: 'NEXON Lv1 Gothic OTF';}
+        li {list-style: none;}
+        table {width: 100%}
+        hr {margin: 100px 0; border: 0; border-bottom: 1px solid #ebebeb}
+        pre {font-family: 'NEXON Lv1 Gothic OTF'; line-height: 1.4;}
+  
+        @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 700; 
+            font-style: normal; 
+            src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFBold.woff2) format('woff2'),
+                url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFBold.woff) format('woff');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 500; 
+            font-style: normal; 
+            src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFMedium.woff2) format('woff2'),
+                url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFMedium.woff) format('woff');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 300; 
+            font-style: normal; 
+            src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFLight.woff2) format('woff2'),
+                url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFLight.woff) format('woff');
+            font-display: swap;
+        }
+        .fonts {font-family: 'GmarketSans';}
+        .letter {font-family: 'GmarketSans';}
+        .size {font-family: 'GmarketSans';}
+        .layout {font-family: 'GmarketSans';}
+        .fontList {font-family: 'GmarketSans';}
+        .fontLayout {font-family: 'GmarketSans';}
+        .fontList table tr td pre {font-family: 'GmarketSans';}
+        .fontLayout .flex div {font-weight: 300; font-family: 'GmarketSans';}
+        .size li, .menu, .cont {font-weight: 300;}
+
+        .fonts {overflow: hidden; max-width: 1200px; width: 100%; margin: 0 auto}
+        .fonts h2 {font-size: 30px; margin-bottom: 10px;}
+        .fonts .intro {overflow: hidden;}
+        .fonts .img {float: left; width: 30%; margin-bottom: 50px;}
+        .fonts .img img {width: 100%;}
+        .fonts .desc {float: right; width: 68%;}
+        .fonts .desc h3 {font-weight: normal; margin-bottom: 16px; margin-top: 0; font-size: 30px;}
+        .fonts .desc h3 em {background: #000; color: #fff; font-style: normal; font-size: 0.6em; padding: 3px 16px; vertical-align: 5px;}
+        .fonts .desc .menu ul {overflow: hidden; margin-bottom: 0;}
+        .fonts .desc .menu li {float: left; list-style: none; text-indent: 0; padding-left: 0;}
+        .fonts .desc .menu li.active a {border-bottom: 2px solid #000}
+        .fonts .desc .menu li a {
+            color: #000; 
+            margin-right: 10px;
+            text-decoration: none; 
+            padding: 8px 20px 6px 20px; 
+            background: #f1f1f1; 
+            display: inline-block;
+        }
+        .fonts .desc .cont {
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 22px 20px 20px 20px;
+            background: #f1f1f1;
+        }
+        .letter h2 {margin-top: 100px;}
+        .letter li {
+            padding: 60px 0 20px 0; font-size: 40px; border-bottom: 1px solid #f1f1f1;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+            position: relative;
+        }
+        .letter li.wNomal {font-weight: normal;}
+        .letter li.w100 {font-weight: 100;}
+        .letter li.w200 {font-weight: 200;}
+        .letter li.w300 {font-weight: 300;}
+        .letter li.w400 {font-weight: 400;}
+        .letter li.w500 {font-weight: 500;}
+        .letter li.w600 {font-weight: 600;}
+        .letter li.w700 {font-weight: 700;}
+        .letter li.w800 {font-weight: 800;}
+        .letter li.w900 {font-weight: 900;}
+        .letter li::before {
+            font-weight: 400;
+            position: absolute;
+            left: 0; top: 20px;
+            font-size: 14px;
+            background: #f1f1f1;
+            padding: 3px 20px;
+            border-radius: 20px;
+        }
+        .letter li.wNormal::before {content: 'font-weight: normal';}
+        .letter li.w100::before {content: 'font-weight: 100';}
+        .letter li.w200::before {content: 'font-weight: 200';}
+        .letter li.w300::before {content: 'font-weight: 300';}
+        .letter li.w400::before {content: 'font-weight: 400';}
+        .letter li.w500::before {content: 'font-weight: 500';}
+        .letter li.w600::before {content: 'font-weight: 600';}
+        .letter li.w700::before {content: 'font-weight: 700';}
+        .letter li.w800::before {content: 'font-weight: 800';}
+        .letter li.w900::before {content: 'font-weight: 900';}
+
+        .size h2 {
+            font-size: 30px;
+            margin-top: 100px; margin-bottom: 20px;
+        }
+        .size h2 span {
+            font-size: 14px;
+            background: #f1f1f1;
+            padding: 3px 20px;
+            border-radius: 20px;
+            margin-right: 5px;
+            vertical-align: 2px;
+            cursor: pointer;
+            font-weight: normal;
+        }
+        .size h2 span.active{
+            background-color: #000;
+            color: #fff;
+        }
+        .size li {
+            padding: 10px 0; font-size: 12px; border-bottom: 1px solid #f1f1f1;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+            position: relative;
+        }
+        .size li::before {
+            margin-right: 10px;
+        }
+        .size li.s10 {font-size: 10px;}
+        .size li.s12 {font-size: 12px;}
+        .size li.s14 {font-size: 14px;}
+        .size li.s16 {font-size: 16px;}
+        .size li.s18 {font-size: 18px;}
+        .size li.s20 {font-size: 20px;}
+        .size li.s24 {font-size: 24px;}
+        .size li.s28 {font-size: 28px;}
+        .size li.s32 {font-size: 32px;}
+        .size li.s36 {font-size: 36px;}
+        .size li.s40 {font-size: 40px;}
+        .size li.s48 {font-size: 48px;}
+        .size li.s60 {font-size: 60px;}
+        .size li.s72 {font-size: 72px;}
+        .size li.s80 {font-size: 80px;}
+        .size li.s10::before {content: 'font-size: 10px';}
+        .size li.s12::before {content: 'font-size: 12px';}
+        .size li.s14::before {content: 'font-size: 14px';}
+        .size li.s16::before {content: 'font-size: 16px';}
+        .size li.s18::before {content: 'font-size: 18px';}
+        .size li.s20::before {content: 'font-size: 20px';}
+        .size li.s24::before {content: 'font-size: 24px';}
+        .size li.s28::before {content: 'font-size: 28px';}
+        .size li.s32::before {content: 'font-size: 32px';}
+        .size li.s36::before {content: 'font-size: 36px';}
+        .size li.s40::before {content: 'font-size: 40px';}
+        .size li.s48::before {content: 'font-size: 48px';}
+        .size li.s60::before {content: 'font-size: 60px';}
+        .size li.s72::before {content: 'font-size: 72px';}
+        .size li.s80::before {content: 'font-size: 80px';}
+
+        .fontLayout h2 {margin-top: 100px; margin-bottom: 20px;}
+        .fontLayout h2 span {
+            font-size: 14px;
+            background: #f1f1f1;
+            padding: 3px 20px;
+            border-radius: 20px;
+            margin-right: 5px;
+            vertical-align: 2px;
+            cursor: pointer;
+            font-weight: normal;
+        }
+        .fontLayout h2 span.active {
+            background-color: #000;
+            color: #fff;
+        }
+        .fontLayout .flex {
+            overflow: hidden;
+        }
+        .fontLayout .flex div {
+            float: left; 
+            line-height: 1.4;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            text-align: justify;
+        }
+        .fontLayout .flex .last {
+            margin-right: 0;
+        }
+        .fontLayout .flex .col4 {
+            width: 23.5%;
+        }
+        .fontLayout .flex .col3 {
+            width: 32%
+        }
+        .fontLayout .flex .col2 {
+            width: 49%
+        }
+        .fontLayout .flex .col1 {
+            width: 100%;
+            margin-right: 0;
+        }
+        .fontList {
+            position: relative;
+            overflow: hidden;
+            max-width: 1200px;
+            margin: 53px auto;
+            color: #000;
+            box-sizing: border-box;
+        }
+        .fontList table {
+            border-top: 1px solid #ebebeb;
+            border-left: 1px solid #ebebeb;
+            width: 100%;
+            border-spacing:0px;
+            border-collapse:collapse;
+        }
+        .fontList table tr td {
+            border-bottom: 1px solid #ebebeb;
+            border-right: 1px solid #ebebeb;
+            padding: 10px;
+        }
+        .fontList table .last {
+            border-right: 0;
+        }
+        .fontList table .ce {
+            text-align: center;
+        }
+        .fontList table a {
+            font-size: 14px;
+            text-decoration: none;
+            padding: 2px 10px; 
+            border-radius: 20px;
+            transition : all 0.3s;
+            background: #fff;
+            color: #000;
+        }
+        .fontList table a:hover {
+            background: #000;
+            color: #fff;
+        }
+        .fontList table .img img{
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- fonts -->
+    <div class="fonts">
+        <div class="intro">
+            <div class="img"><img src="https://webfontworld.github.io/GmarketSans/GmarketSans.png" alt="GmarketSans"></div>
+            <div class="desc">
+                <h3>웹 폰트 사용하기 <em class="copy">font-family: 'GmarketSans';</em></h3>
+                <div class="menu">
+                    <ul>
+                        <li class="active"><a href="#">link 방식</a></li>
+                        <li><a href="#">import 방식</a></li>
+                        <li><a href="#">CSS 방식</a></li>
+                        <li><a href="#">다운로드</a></li>
+                        <li><a href="#">라이센스</a></li>
+                    </ul>
+                </div>
+                <div class="cont">
+                    <div>
+                        &lt;link href="https://webfontworld.github.io/GmarketSans/GmarketSans.css" rel="stylesheet"&gt;
+                    </div>
+                    <div>
+                        @import url('https://webfontworld.github.io/GmarketSans/GmarketSans.css');
+                    </div>
+                    <div>
+<pre><code>@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 700; 
+    font-style: normal; 
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFBold.woff2) format('woff2'),
+         url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFBold.woff) format('woff');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 500; 
+    font-style: normal; 
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFMedium.woff2) format('woff2'),
+         url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFMedium.woff) format('woff');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 300; 
+    font-style: normal; 
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFLight.woff2) format('woff2'),
+         url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFLight.woff) format('woff');
+    font-display: swap;
+}
+</code></pre>
+                        
+                    </div>
+                    <div>
+                        <a href="http://company.gmarket.co.kr/company/about/company/company--font.asp" target="_blank">http://company.gmarket.co.kr/company/about/company/company--font.asp</a>
+                    </div>
+                    <div>
+                        <a href="http://company.gmarket.co.kr/company/about/company/company--font.asp" target="_blank">http://company.gmarket.co.kr/company/about/company/company--font.asp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="letter">
+            <h2>Font-weight</h2>
+            <ul>
+                <li class="w300">이 폰트의 WEIGHT는 여러가지가 있습니다. 이 폰트의 weight는 여러가지가 있습니다. 이 폰트의 두께는 여러가지가 있습니다.</li>
+                <li class="w500">이 폰트의 WEIGHT는 여러가지가 있습니다. 이 폰트의 weight는 여러가지가 있습니다. 이 폰트의 두께는 여러가지가 있습니다.</li>
+                <li class="w700">이 폰트의 WEIGHT는 여러가지가 있습니다. 이 폰트의 weight는 여러가지가 있습니다. 이 폰트의 두께는 여러가지가 있습니다.</li>
+            </ul>
+        </div>
+
+        <div class="size">
+            <h2>Font-size <span class="active">300</span><span>500</span><span>700</span></h2>
+            <ul>
+                <li class="s10">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9</li>
+                <li class="s12">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s14">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s16">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s18">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s20">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s24">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s28">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s32">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s36">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s40">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s48">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s60">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s72">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+                <li class="s80">가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 가 나 다 라 마 바 사 아 자 차 카 타 파 하 a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 </li>
+            </ul>
+        </div>
+
+        <div class="fontLayout">
+            <h2>Font-layout <span class="active">300</span><span>500</span><span>700</span></h2>
+            <div class="flex">
+                <div class="col4">모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다. 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다.</div>
+                <div class="col4">모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다. 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다.</div>
+                <div class="col4">모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다. 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다.</div>
+                <div class="col4 last">모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다. 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다.</div>
+                <div class="col3">모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다. 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다.</div>
+                <div class="col3">모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다. 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다.</div>
+                <div class="col3 last">모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다. 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다.</div>
+                <div class="col2">모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다. 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다. 모든 국민은 신체의 자유를 가진다. 누구든지 법률에 의하지 아니하고는 체포ㆍ구속ㆍ압수ㆍ수색 또는 심문을 받지 아니하며, 법률과 적법한 절차에 의하지 아니하고는 처벌ㆍ보안처분 또는 강제노역을 받지 아니한다.</div>
+                <div class="col2 last">모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다. 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다. 모든 국민은 신체의 자유를 가진다. 누구든지 법률에 의하지 아니하고는 체포ㆍ구속ㆍ압수ㆍ수색 또는 심문을 받지 아니하며, 법률과 적법한 절차에 의하지 아니하고는 처벌ㆍ보안처분 또는 강제노역을 받지 아니한다.</div>
+                <div class="col1">모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다. 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다. 모든 국민은 신체의 자유를 가진다. 누구든지 법률에 의하지 아니하고는 체포ㆍ구속ㆍ압수ㆍ수색 또는 심문을 받지 아니하며, 법률과 적법한 절차에 의하지 아니하고는 처벌ㆍ보안처분 또는 강제노역을 받지 아니한다. 모든 국민은 행위시의 법률에 의하여 범죄를 구성하지 아니하는 행위로 소추되지 아니하며, 동일한 범죄에 대하여 거듭 처벌받지 아니한다.</div>
+            </div>
+        </div>
+
+        <hr>
+        
+    </div>
+    <!-- //fonts -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".size h2 span").click(function(){
+            var target = $(this);  
+            $(".size h2 span").removeClass("active");  
+            target.addClass("active");     
+            let weight = $(this).text(); 
+            $(".size li").css("font-weight", weight);
+        });
+        $(".fontLayout h2 span").click(function(){
+            var target = $(this);  
+            $(".fontLayout h2 span").removeClass("active");  
+            target.addClass("active");     
+            let weight = $(this).text(); 
+            $(".fontLayout .flex div ").css("font-weight", weight);
+        });
+
+        var tabBtn = $(".fonts .desc .menu li");    
+		var tabCont = $(".fonts .desc .cont div");      
+		tabCont.hide().eq(0).show();
+		tabBtn.click(function(){
+			var target = $(this);        
+			var index = target.index();  
+			tabBtn.removeClass("active");  
+			target.addClass("active");      
+			tabCont.css("display","none");
+			tabCont.eq(index).css("display","block");
+		});
+
+        document.querySelectorAll(".copy").forEach(copy => {
+            copy.addEventListener("click", function(){
+                var inp = document.createElement("input");
+                inp.setAttribute("value", copy.innerText);
+                document.body.appendChild(inp);
+                inp.select();
+                document.execCommand("copy");
+                document.body.removeChild(inp);
+                alert("텍스트를 복사하였습니다.");
+            })
+        });
+
+    </script>
+</body>
+</html>
